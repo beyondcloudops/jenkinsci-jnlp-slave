@@ -2,7 +2,7 @@
  * This Pipeline is *not* used for actual image publishing.
  * This is currently handled through Automated Builds using standard Docker Hub feature
 */
-node ('jnlp') {
+node ('slave') {
 
     options {
         timeout(time: 2, unit: 'MINUTES')
