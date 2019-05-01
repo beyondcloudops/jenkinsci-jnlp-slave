@@ -1,28 +1,10 @@
-/* NOTE: this Pipeline mainly aims at catching mistakes (wrongly formed Dockerfile, etc.)
- * This Pipeline is *not* used for actual image publishing.
- * This is currently handled through Automated Builds using standard Docker Hub feature
-*/
-node ('slave') {
-
-    options {
-        timeout(time: 2, unit: 'MINUTES')
-        buildDiscarder(logRotator(daysToKeepStr: '10'))
-        timestamps()
-    }
-
-    triggers {
-        pollSCM('H/24 * * * *') // once a day in case some hooks are missed
-    }
-
+pipeline {
+    agent { docker { image 'maven:3.3.3' } }
     stages {
-        stage('Build Docker Image') {
+        stage('build') {
             steps {
-                deleteDir()
-                checkout scm
-                sh 'make build'
+                sh 'mvn --version'
             }
         }
     }
 }
-
-// vim: ft=groovy
