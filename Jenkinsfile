@@ -1,4 +1,4 @@
-pipeline ('jnlp'){
+node ('jnlp'){
     stages {
         stage('build') {
             steps {
