@@ -4,8 +4,7 @@ node ('slave'){
                 sh 'ls -la'
                 sh 'whoami'       
         }
-        stage('Build Docker Image') {
-                deleteDir()
+        stage('Build Docker image') {
                 sh 'make build'
         }
 }
