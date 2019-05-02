@@ -1,4 +1,4 @@
-node ('jnlp'){
+node ('slave'){
     stages {
         stage('build') {
             steps {
