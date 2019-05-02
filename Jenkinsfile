@@ -3,4 +3,5 @@ node ('slave'){
                 checkout scm
                 sh 'ls -la'
                 sh 'whoami'       
+        }
 }
