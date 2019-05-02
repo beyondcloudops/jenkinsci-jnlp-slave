@@ -1,8 +1,12 @@
 node ('slave'){
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-                sh 'ls -la'
+        stage('Checkout') {
+                build
+                deploy()
         }
-    }
+        def checkout{
+        checkout scm
+        }
+        def deploy(){
+        whoami
+        }  
 }
