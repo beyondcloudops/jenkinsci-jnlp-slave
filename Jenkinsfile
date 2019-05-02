@@ -1,13 +1,13 @@
 node ('slave'){
         stage('Checkout') {
                 checkout scm
-                build()
-                deploy()
+                build
+                deploy
         }
-        def build()
+        def build
                 stage "SCM checkout"
                 sh 'ls -la'
-        def deploy()
+        def deploy
                 stage "deploy"
         sh 'whoami'       
 }
