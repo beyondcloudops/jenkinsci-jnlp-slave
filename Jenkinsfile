@@ -1,4 +1,4 @@
-node ('slave'){
+node ('jnlp'){
         stage('Checkout') {
                 checkout scm
                 sh 'ls -la'
